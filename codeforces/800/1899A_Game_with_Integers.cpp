@@ -6,7 +6,7 @@ int main() {
     cin >> t;
     for(int i=0;i<t;i++) {
         cin >> n;
-        if(n%3==0) cout<< "second" << endl;
+        if(n%3==0) cout<< "Second" << endl;
         else cout << "First" << endl;
     }
 }
