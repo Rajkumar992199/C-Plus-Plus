@@ -7,7 +7,7 @@ int main() {
     double a[n];
     for (int i = 0; i < n; i++) cin >> a[i]; // storing lantern locations
     sort(a, a + n);
-    double mx = max(a[0] - 0, l - a[n - 1]), diff; // maximum light radius required for end lanterns
+    double mx = max(a[0] - 0, l - a[n - 1]), diff; // maximum light radius required for first and last lanterns
     for (int i = 1; i < n; i++) {
         diff = (a[i] - a[i - 1]) / 2 ;
         mx = max(mx, diff);
