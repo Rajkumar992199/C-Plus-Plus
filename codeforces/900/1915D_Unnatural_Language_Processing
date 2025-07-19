@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        string str;
+        cin >> str;
+        string rev = "";
+        while(!str.empty()){
+            int x = 0;
+            if(str.back() == 'a' || str.back() == 'e')
+                x=2;
+            else x=3;
+            while(x--){
+                rev += str.back();
+                str.pop_back();
+            }
+            rev += '.';
+        }
+        rev.pop_back();
+        reverse(rev.begin(), rev.end());
+        cout << rev << "\n";
+    }
+    return 0;
+}
