@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N=1e5+5;
+int t,n,q,x[N];
+map<long long,int>mp;
+
+int main(){
+	cin >> t;
+	while(t--){
+		mp.clear();
+		cin >> n >> q;
+		for(int i = 1; i <= n; i++){
+			cin >> x[i];
+			mp[1ll*i*(n-i+1)-1]++;
+			mp[1ll*(i-1)*(n-i+1)] += x[i] - x[i - 1] - 1;
+		}
+		while(q--){
+			long long k;
+			cin >> k;
+			cout << mp[k] << ' ';
+		}
+		cout << endl;
+	}
+	return 0;
+}
