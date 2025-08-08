@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    long long n, k, cur = 0, ans = 0;
+    cin >> n >> k;
+	while(n--)
+    {
+		long long x;
+		cin >> x;
+		cur += x;
+		long long r = min(8ll, cur);
+		cur -= r;
+		k -= r;
+		ans++;
+		if(k <= 0)
+			break;
+	}
+	if(k > 0)
+		cout << -1 << '\n';
+	else
+		cout << ans << '\n';
+    return 0;
+}
+
