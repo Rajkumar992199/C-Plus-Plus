@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define flp(k,n) for(int i=k;i<n;i++)
+#define flm(k,n) for(int j=n-1;j>=k;j--)
+#define YES cout<<"YES"<<endl
+#define NO cout<<"NO"<<endl
+#define ll long long
+
+
+void solve()
+{
+    int n,c=0,ans=2;
+    cin>>n;
+    vector<int> a(n);
+    flp(0,n)
+        cin>>a[i];
+    if(is_sorted(a.begin(),a.end()))
+        ans=0;
+    else if(a[0]==1 || a[n-1]==n) 
+        ans=1;
+    else if(a[0]==n && a[n-1]==1)
+        ans=3;
+    cout<<ans<<endl;
+}
+
+
+signed main() 
+{
+    int TT;
+    cin>>TT;
+    while(TT--)
+    {
+        solve();
+    }
+}
