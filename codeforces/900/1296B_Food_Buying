@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    ios_base::sync_with_stdio(false); 
+    cin.tie(0);
+
+    int t;
+    cin >> t;
+    while(t--) {
+        long long s, ans = 0, change = 0; // amount, answer, change
+        cin >> s;
+        while(s > 0) {
+            ans += s - (s % 10); // amount on which cashback is applicable
+            change += s % 10; // change
+            s = s / 10; // cashback
+            if(s + change > 9) {
+                s += change; // total remaining amount
+                change = 0; // change = 0
+            }
+        }
+        ans += change; // adding change
+        cout << ans << endl;
+    }
+    return 0;
+}
