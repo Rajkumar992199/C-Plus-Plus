@@ -1,0 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	cout << "C2";
+
+	return 0;
+}
