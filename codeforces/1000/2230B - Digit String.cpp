@@ -1,22 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define mod 998244353;
 
 void solve() {
     string s;
 	cin >> s;
-	bool odd = false;
-	int ans = 0;
-	for(int i = 0; i < s.size(); i++) {
-		int x = s[i] - '0';
-		if(x == 4)
-			ans++;
-		else if(odd && x == 2)
-			ans++;
-		else if(x % 2)
-			odd = true;
+	int ans = 0, cnt1 = 0, cnt2 = 0, n = s.size();
+	for(int i = 0; i < n; i++) 
+		if(s[i] == '1' || s[i] == '3') 
+			cnt1++;
+	ans = cnt1;
+
+	for(int i = 0; i < n; i++) {
+		if(s[i] == '2')
+			cnt2++;
+		if(s[i] == '1' || s[i] == '3') 
+			cnt1--;
+		ans = max(ans, cnt1 + cnt2);
 	}
-	cout << ans << endl;
+	cout << n - ans << endl;
 }
 
 int main() {
